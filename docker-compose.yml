@@ -1,0 +1,11 @@
+version: '3'
+services:
+  golang:
+    build:
+      context: ./docker_files/go
+    container_name: dockerbaseapp_server # バックエンド用の任意のコンテナ名を設定
+    volumes:
+      - '.:/go/src/app'
+    ports:
+      - '8050:8080' # 「:」の左側は任意のポート番号を設定
+    tty: true
